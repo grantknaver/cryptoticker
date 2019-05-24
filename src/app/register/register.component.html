@@ -1,0 +1,43 @@
+<div id="register">
+    <form 
+    [formGroup]="registerFormGroup" 
+    (ngSubmit)="onSubmit()">
+        <h1 class="mat-headline form__login--header">
+        Register
+        </h1>
+        <div id="emailContainer">
+            <mat-form-field>
+                <input type="email"
+                matInput
+                id="email"
+                placeholder="email address"
+                formControlName="email">
+                <mat-hint *ngIf="registerFormGroup.controls.email.errors?.required && registerFormGroup.controls.email.touched">Email Required</mat-hint>
+            </mat-form-field>
+        </div>
+        <div
+        id="passwordFormGroup"
+        [formGroup]="passwordFormGroup">
+
+            <mat-form-field>
+                <input type="password"
+                matInput
+                id="password"
+                placeholder="password"
+                formControlName="password">
+                <mat-hint *ngIf="(passwordFormGroup.controls['password'].hasError('required')) && (passwordFormGroup.controls['password'].touched)">Password Required</mat-hint>
+            </mat-form-field>
+            
+            <mat-form-field>
+                <input type="password"
+                matInput
+                id="repeatPassword"
+                placeholder="confirm password"
+                formControlName="repeatPassword">
+                <mat-hint *ngIf="(passwordFormGroup.controls['repeatPassword'].touched) && (repeatPassword !== password)">Match Password</mat-hint>
+            </mat-form-field>
+
+        </div>     
+        <button class="btn btn__login" type="submit" [disabled]="!registerFormGroup.valid">Register</button>    
+    </form> 
+</div>

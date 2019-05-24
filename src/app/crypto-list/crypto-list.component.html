@@ -1,0 +1,21 @@
+<!-- <div *ngIf="display" class="crypto-list"> -->
+<div class="crypto-list">
+  <div class="crypto-title">
+    Coin List
+  </div>
+
+<div class="crypto-display">
+  <mat-card class="crypto-card" *ngFor="let crypto of cryptoList">
+    <mat-card-header class="name-line">
+      <img style="width: 40px; height: 43px;" [src]=crypto.logo />
+      <div class="crypto-name">{{ crypto.ticker }}</div>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="content-line">
+          <div class="content-label">Price</div>
+          <div class="content-data">{{ crypto.price }}</div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+</div>

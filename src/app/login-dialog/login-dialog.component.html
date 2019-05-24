@@ -1,0 +1,38 @@
+<div id="login">
+    <div id="cancelContainer">
+        <button class="cancel-icon" [mat-dialog-close]>
+             <fa-icon [icon]="cancelIcon"></fa-icon>
+        </button>
+    </div>   
+    <form 
+        [formGroup]="loginForm" 
+        (ngSubmit)="onLogin()">
+        <h1 class="mat-headline form__login--header">Log In</h1>
+        <mat-form-field>
+            <input type="email"
+                matInput
+                id="email"
+                placeholder="email address"
+                formControlName="email">
+            <mat-error *ngIf="(loginForm.controls['email'].hasError('required')) && (loginForm.controls['email'].touched)">
+            Email name is required
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="password"
+               matInput
+               id="password"
+               placeholder="password"
+               formControlName="password">
+            <mat-error *ngIf="(loginForm.controls['password'].hasError('required')) && (loginForm.controls['password'].touched)">
+            Password is required
+            </mat-error>
+        </mat-form-field>
+        <button class="btn btn__login" type="submit" [disabled]="!loginForm.valid">Log In</button>
+        <a mat-button id="recoveryBtn" (click)="onRecoverPassword()" disabled>Forgot Password</a>
+        <a mat-button (click)="onRegister()">Need to Register</a>        
+      <div *ngIf="loginError">
+          <p class="login-error">Your email or password was not recognized - please reenter.</p>
+      </div>
+    </form> <!-- end of loginForm -->
+  </div>

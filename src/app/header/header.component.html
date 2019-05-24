@@ -1,0 +1,35 @@
+<div class="header">
+    <div class="logo">
+      <img class="logoPic" [src]="logoPic" height="50" />
+    </div>
+    <div class="header-nav" *ngIf="desktop; else mobile">
+      <ng-template [ngIf]="!authService.isAuthenticated()">
+          <div class="header-nav-item" (click)="onHome()">Home</div>
+          <div class="header-nav-item" (click)="onRegister()">Register</div>
+          <div class="header-nav-item" (click)="onLogin()">Log In</div>
+      </ng-template>
+      <ng-template [ngIf]="authService.isAuthenticated()">
+          <div class="header-nav-item" (click)="onHome()">Home</div>
+          <div class="header-nav-item" (click)="onCoins()">Coins</div>
+          <div class="header-nav-item" (click)="onLogout()">Log Out</div>
+      </ng-template>
+    </div>
+    <ng-template #mobile>
+      <button id="mobileBtn" (click)="onOpen()">
+        <i class="fas fa-bars"></i>
+        <!-- <fa-icon [icon]="linkedinIcon"></fa-icon> -->
+      </button>
+      <ul class="mobile-nav" *ngIf="open" >
+        <ng-template [ngIf]="!authService.isAuthenticated()">
+            <li class="mobile-nav-item" (click)="onHome()">Home</li>
+            <li class="mobile-nav-item" (click)="onRegister()">Register</li>
+            <li class="mobile-nav-item" (click)="onLogin()" >Log In</li>
+        </ng-template>
+        <ng-template [ngIf]="authService.isAuthenticated()">
+            <li class="mobile-nav-item" (click)="onHome()">Home</li>
+            <li class="mobile-nav-item" (click)="onCoins()">Coins</li>
+            <li class="mobile-nav-item" (click)="onLogout()">Log Out</li>
+        </ng-template>
+        </ul>
+    </ng-template>
+</div>

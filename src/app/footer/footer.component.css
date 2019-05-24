@@ -1,0 +1,43 @@
+.footer {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #272324;
+  color: white;
+  padding: 10px 0;
+}
+
+.social-icon {
+  color: white;
+  margin: 0px 10px 0px 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.signature {
+  margin: 0px 20px 0px 20px;
+  color: white;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+/* @media only screen and (max-width: 600px) {
+  .footer {
+      height: 45px;
+  }
+
+  .social-icon {
+    margin: 0px 5px 0px 5px;
+  }
+
+  .signature {
+    display: none;
+  }
+} */

@@ -1,0 +1,28 @@
+#login {
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+}
+
+#cancelContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+form {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    margin-top: 10px;
+}
+
+#recoveryBtn {
+    margin-top: 10px;
+}
